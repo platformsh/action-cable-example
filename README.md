@@ -20,7 +20,8 @@ Then, once you clone down this repo:
 
 * `bundle install`
 * `rake db:create; rake db:migrate`
+* `redis-server /usr/local/etc/redis.conf`
+* `bundle exec sidekiq`
+* `bundle exec rails s`
 
 And you're all set.
-
-
