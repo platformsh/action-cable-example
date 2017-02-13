@@ -8,7 +8,7 @@ web:
   commands:
     start: |
       rackup config.ru -s puma -E production -p $PORT
-      sidekiq
+      bundle exec sidekiq
   locations:
     "/":
       root: "public"
@@ -26,7 +26,8 @@ hooks:
     gem install bundler
     RAILS_ENV=production bundle install --jobs 6 --without development test
     RAILS_ENV=production bundle exec rake assets:precompile
-  deploy: RACK_ENV=production bundle exec rake db:migrate
+  deploy: |
+    RACK_ENV=production bundle exec rake db:migrate
 
 mounts:
  "/app/public/system": "shared:files/publicsystem"

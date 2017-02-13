@@ -2,6 +2,9 @@
   type: upstream
   # the first part should be your project name
   upstream: "action_cable_example:http"
+  # disable cache for websocket support
+  cache:
+    enabled: false
 
 "http://www.{default}/":
   type: redirect

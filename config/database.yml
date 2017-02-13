@@ -1,4 +1,4 @@
-<%= @config = PlatformSH::config %>
+<% @config = PlatformSH::config %>
 
 # PostgreSQL. Versions 9.1 and up are supported.
 #
@@ -82,4 +82,8 @@ test:
 #
 production:
   <<: *default
-  port: <%= @config["relationships"]["database"][0]['port'] %>
+  host: <%= @config['relationships']['database'].first['host'] %>
+  database: <%= @config['relationships']['database'].first['path'] %>
+  username: <%= @config['relationships']['database'].first['username'] %>
+  password: <%= @config['relationships']['database'].first['password'] %>
+  port: <%= @config['relationships']['database'].first['port'] %>
