@@ -24,8 +24,8 @@ disk: 2048
 hooks:
   build: |
     gem install bundler
-    bundle install --jobs 6 --without development test
-    bundle exec rake assets:precompile
+    RAILS_ENV=production bundle install --jobs 6 --without development test
+    RAILS_ENV=production bundle exec rake assets:precompile
   deploy: RACK_ENV=production bundle exec rake db:migrate
 
 mounts:
