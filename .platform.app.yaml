@@ -19,6 +19,8 @@ web:
 relationships:
     database: "database:postgresql"
 
+disk: 2048
+
 hooks:
   build: |
     gem install bundler
