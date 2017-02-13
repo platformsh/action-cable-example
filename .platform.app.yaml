@@ -1,0 +1,30 @@
+name: 'action_cable_example'
+
+type: 'ruby:2.3'
+
+web:
+  upstream:
+    socket_family: tcp
+  commands:
+    start: |
+      rackup config.ru -s puma -E production -p $PORT
+      sidekiq
+  locations:
+    "/":
+      root: "public"
+      passthru: true
+      expires: 1h
+      allow: true
+
+relationships:
+    database: "database:postgresql"
+
+hooks:
+  build: |
+    gem install bundler
+    bundle install --jobs 6 --without development test
+  deploy: RACK_ENV=production bundle exec rake db:migrate
+
+mounts:
+  "/tmp": "shared:files/tmp"
+  "/logs": "shared:files/logs"
