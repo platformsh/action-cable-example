@@ -3,5 +3,6 @@
   <%= f.text_area :content, class: "form-control", data: {textarea: "message"}%>
 
   <%= f.hidden_field :chatroom_id, value: chatroom.id %>
+  <%= f.select :language, options_for_select([["Ruby", "ruby"], ["Python", "python"], ["JavaScript", "javascript"], ["CSS", "css"]]), { include_blank: true }, class: "form-control" %>
   <%= f.submit "send", class: "btn btn-primary", style: "display: none", data: {send: "message"}%>
 <%end%>

@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
     message = Message.new(message_params)
     message.user = current_user
     if message.save
+      HighlighterWorker.perform_async(message.id) unless message.language.blank?
       ActionCable.server.broadcast 'messages',
         message: message.content,
         user: message.user.username
@@ -14,6 +15,6 @@ class MessagesController < ApplicationController
   private
 
     def message_params
-      params.require(:message).permit(:content, :chatroom_id)
+      params.require(:message).permit(:content, :chatroom_id, :language)
     end
 end
