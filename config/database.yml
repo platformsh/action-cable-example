@@ -1,4 +1,4 @@
-  # PostgreSQL. Versions 9.1 and up are supported.
+# PostgreSQL. Versions 9.1 and up are supported.
 #
 # Install the pg driver:
 #   gem install pg
@@ -80,6 +80,3 @@ test:
 #
 production:
   <<: *default
-  # database: chatty_production
-  # username: chatty
-  # password: <%= ENV['CHATTY_DATABASE_PASSWORD'] %>

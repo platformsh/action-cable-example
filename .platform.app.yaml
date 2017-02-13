@@ -29,6 +29,6 @@ hooks:
   deploy: RACK_ENV=production bundle exec rake db:migrate
 
 mounts:
- "public/system": "shared:files/publicsystem"
- "log": "shared:files/log"
- "tmp": "shared:files/tmp"
+ "/app/public/system": "shared:files/publicsystem"
+ "/app/log": "shared:files/log"
+ "/app/tmp": "shared:files/tmp"

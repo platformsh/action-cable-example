@@ -19,7 +19,7 @@ gem 'redis', '~> 3.0'
 gem 'sidekiq', '~> 4.2.9'
 
 # Platform.sh stuff
-gem 'platform_sh_rails'
+gem 'platform_sh'
 
 group :development, :test do
   gem 'byebug'

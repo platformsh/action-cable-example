@@ -56,9 +56,9 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  # if ENV["RAILS_LOG_TO_STDOUT"].present?
-  config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
-  # end
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+  end
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
