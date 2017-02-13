@@ -1,4 +1,4 @@
-@config = PlatformSH::config
+<%= @config = PlatformSH::config %>
 
 # PostgreSQL. Versions 9.1 and up are supported.
 #
