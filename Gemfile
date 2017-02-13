@@ -18,6 +18,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 gem 'sidekiq', '~> 4.2.9'
 
+# Platform.sh stuff
+gem 'platform_sh_rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'pry'

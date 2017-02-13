@@ -1,4 +1,8 @@
 "http://{default}/":
-    type: upstream
-    # the first part should be your project name
-    upstream: "action_cable_example:http"
+  type: upstream
+  # the first part should be your project name
+  upstream: "action_cable_example:http"
+
+"http://www.{default}/":
+  type: redirect
+  to: "http://{default}/"
