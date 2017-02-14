@@ -17,8 +17,8 @@ web:
       allow: true
 
 relationships:
-    database: "database:postgresql"
-    cache: "rediscache:redis"
+  database: "database:postgresql"
+  cache: "rediscache:redis"
 
 disk: 2048
 
@@ -31,6 +31,6 @@ hooks:
     RACK_ENV=production bundle exec rake db:migrate
 
 mounts:
- "/app/public/system": "shared:files/publicsystem"
- "/app/log": "shared:files/log"
- "/app/tmp": "shared:files/tmp"
+  "/app/public/system": "shared:files/publicsystem"
+  "/app/log": "shared:files/log"
+  "/app/tmp": "shared:files/tmp"
