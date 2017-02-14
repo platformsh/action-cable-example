@@ -14,7 +14,7 @@ begin
     config.redis = { url: "redis://#{redis_host}:#{redis_port}/2" }
   end
 
-  Rails.application.configure do |config|
+  Rails.application.configure do
     config.action_cable.url = "redis://#{redis_host}:#{redis_port}/1"
   end
 rescue
