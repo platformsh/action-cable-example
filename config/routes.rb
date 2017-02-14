@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :messages
 
   # Serve websocket cable requests in-process
-  mount ActionCable.server => '/ws'
+  mount ActionCable.server => '/cable'
 
   mount Sidekiq::Web, at: '/sidekiq'
 end
