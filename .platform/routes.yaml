@@ -4,7 +4,7 @@
   upstream: "action_cable_example:http"
   # disable cache for websocket support
 
-"ws://{default}/cable":
+"http://{default}/cable":
   type: upstream
   upstream: "action_cable_example:http"
   cache:
