@@ -86,5 +86,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
   config.action_cable.url = ENV['REDIS_URL']
-
+  config.action_cable.mount_path = '/ws'
 end

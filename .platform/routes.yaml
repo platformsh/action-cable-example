@@ -3,10 +3,6 @@
   # the first part should be your project name
   upstream: "action_cable_example:http"
   # disable cache for websocket support
-
-"http://{default}/cable":
-  type: upstream
-  upstream: "action_cable_example:http"
   cache:
     enabled: false
 
