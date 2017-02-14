@@ -7,7 +7,7 @@ web:
     socket_family: tcp
   commands:
     start: |
-      rackup config.ru -s puma -E production -p $PORT
+      bundle exec puma -e production -p $PORT
       bundle exec sidekiq
   locations:
     "/":
