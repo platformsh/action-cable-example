@@ -1,21 +1,21 @@
-require 'base64'
-require 'json'
-
-begin
-  relationships = JSON.parse(Base64.decode64(ENV['PLATFORM_RELATIONSHIPS']))
-  redis_host = relationships.fetch('cache').first.fetch('host')
-  redis_port = relationships.fetch('cache').first.fetch('port')
-
-  Sidekiq.configure_server do |config|
-    config.redis = { url: "redis://#{redis_host}:#{redis_port}/2" }
-  end
-
-  Sidekiq.configure_client do |config|
-    config.redis = { url: "redis://#{redis_host}:#{redis_port}/2" }
-  end
-
-  Rails.application.configure do
-    config.action_cable.url = "redis://#{redis_host}:#{redis_port}/1"
-  end
-rescue
-end
+# require 'base64'
+# require 'json'
+#
+# begin
+#   relationships = JSON.parse(Base64.decode64(ENV['PLATFORM_RELATIONSHIPS']))
+#   redis_host = relationships.fetch('cache').first.fetch('host')
+#   redis_port = relationships.fetch('cache').first.fetch('port')
+#
+#   Sidekiq.configure_server do |config|
+#     config.redis = { url: "redis://#{redis_host}:#{redis_port}/2" }
+#   end
+#
+#   Sidekiq.configure_client do |config|
+#     config.redis = { url: "redis://#{redis_host}:#{redis_port}/2" }
+#   end
+#
+#   Rails.application.configure do
+#     config.action_cable.url = "redis://#{redis_host}:#{redis_port}/1"
+#   end
+# rescue
+# end
