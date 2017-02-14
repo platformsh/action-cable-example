@@ -7,7 +7,7 @@ web:
     socket_family: unix
     protocol: http
   commands:
-    start: puma -e production -b unix://$SOCKET && sidekiq L /app/log/sidekiq.log
+    start: puma -e production -b unix://$SOCKET && sidekiq -e production -L /app/log/sidekiq.log
   locations:
     "/":
       root: "public"
