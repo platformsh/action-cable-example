@@ -20,6 +20,7 @@ gem 'sidekiq', '~> 4.2.9'
 
 # Platform.sh stuff
 gem 'platform_sh_rails'
+gem 'foreman'
 
 group :development, :test do
   gem 'byebug'
