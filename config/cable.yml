@@ -1,9 +1,11 @@
-# Action Cable uses Redis by default to administer connections, channels, 
+<% @config = PlatformSH::config %>
+
+# Action Cable uses Redis by default to administer connections, channels,
 #  and sending/receiving messages over the WebSocket.
 
 production:
   adapter: redis
-  url: <%=ENV['REDIS_URL']%>
+  url: redis://<%= @config['relationships']['cache'].first['host'] %>:<%= @config['relationships']['cache'].first['port'] %>
 
 development:
   adapter: async
