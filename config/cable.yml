@@ -1,3 +1,4 @@
+<% require 'platform_sh' %>
 <% @config = PlatformSH::config %>
 
 # Action Cable uses Redis by default to administer connections, channels,
