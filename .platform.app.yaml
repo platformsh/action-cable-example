@@ -7,7 +7,7 @@ web:
     socket_family: tcp
     protocol: http
   commands:
-    start: bundle exec puma -d -e production -p $PORT && bundle exec sidekiq -d
+    start: bundle exec puma -d -e production -p $PORT && bundle exec sidekiq -d -L /log/sidekiq.log
   locations:
     "/":
       root: "public"
@@ -30,6 +30,6 @@ hooks:
     RACK_ENV=production bundle exec rake db:migrate
 
 mounts:
-  "/app/public/system": "shared:files/publicsystem"
-  "/app/log": "shared:files/log"
-  "/app/tmp": "shared:files/tmp"
+  "/public/system": "shared:files/publicsystem"
+  "/log": "shared:files/log"
+  "/tmp": "shared:files/tmp"
