@@ -18,6 +18,7 @@ web:
 
 relationships:
     database: "database:postgresql"
+    cache: "rediscache:redis"
 
 disk: 2048
 
