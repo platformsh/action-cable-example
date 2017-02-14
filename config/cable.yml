@@ -5,7 +5,7 @@
 
 production:
   adapter: redis
-  url: redis://<%= @config['relationships']['cache'].first['host'] %>:<%= @config['relationships']['cache'].first['port'] %>
+  url: redis://<%= @config.fetch('relationships').fetch('cache').first.fetch('host') %>:<%= @config.fetch('relationships').fetch('cache').first.fetch('port') %>
 
 development:
   adapter: async
