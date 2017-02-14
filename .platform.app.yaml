@@ -7,17 +7,13 @@ web:
     socket_family: tcp
     protocol: http
   commands:
-    start: |
-      bundle exec puma -e production -p $PORT
-      bundle exec sidekiq
+    start: bundle exec puma -d -e production -p $PORT && bundle exec sidekiq -d
   locations:
     "/":
       root: "public"
       passthru: true
       expires: 1h
       allow: true
-    "/cable":
-      passthru: true
 
 relationships:
   database: "database:postgresql"
