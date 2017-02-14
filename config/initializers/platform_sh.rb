@@ -1,9 +1,7 @@
 require 'base64'
 require 'json'
-relationships = JSON.parse(Base64.decode64(ENV['PLATFORM_RELATIONSHIPS']))
 
-return unless Rails.env.production?
-@config = PlatformSH::config
+relationships = JSON.parse(Base64.decode64(ENV['PLATFORM_RELATIONSHIPS']))
 redis_host = relationships.fetch('cache').first.fetch('host')
 redis_port = relationships.fetch('cache').first.fetch('port')
 
