@@ -133,7 +133,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
-    redis (3.3.3)
+    redis (3.3.5)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -194,7 +194,7 @@ DEPENDENCIES
   pry
   puma
   rails (~> 5.0.0, < 5.1)
-  redis (~> 3.0)
+  redis (~> 3.3)
   sass-rails (~> 5.0)
   sidekiq (~> 4.2.9)
   spring
